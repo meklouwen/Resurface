@@ -1,0 +1,4 @@
+*.png
+!images/*.png
+.git
+.claude
