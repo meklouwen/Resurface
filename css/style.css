@@ -1415,8 +1415,8 @@ button, input, textarea { font-family: inherit; }
 /* ===== SCROLL ANIMATIONS ===== */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.visible {
@@ -1426,8 +1426,8 @@ button, input, textarea { font-family: inherit; }
 
 .reveal-left {
   opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateX(-60px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-left.visible {
@@ -1437,8 +1437,8 @@ button, input, textarea { font-family: inherit; }
 
 .reveal-right {
   opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateX(60px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-right.visible {
@@ -1448,8 +1448,8 @@ button, input, textarea { font-family: inherit; }
 
 .reveal-scale {
   opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: scale(0.9);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-scale.visible {
@@ -1461,37 +1461,158 @@ button, input, textarea { font-family: inherit; }
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* Staggered children — auto-delays for grid items */
+.services-grid.visible .service-card,
+.reviews-grid.visible .review-card,
+.project-gallery.visible img {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: staggerUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.services-grid.visible .service-card:nth-child(1),
+.reviews-grid.visible .review-card:nth-child(1),
+.project-gallery.visible img:nth-child(1) { animation-delay: 0.05s; }
+.services-grid.visible .service-card:nth-child(2),
+.reviews-grid.visible .review-card:nth-child(2),
+.project-gallery.visible img:nth-child(2) { animation-delay: 0.1s; }
+.services-grid.visible .service-card:nth-child(3),
+.reviews-grid.visible .review-card:nth-child(3),
+.project-gallery.visible img:nth-child(3) { animation-delay: 0.15s; }
+.services-grid.visible .service-card:nth-child(4) { animation-delay: 0.2s; }
+.services-grid.visible .service-card:nth-child(5) { animation-delay: 0.25s; }
+.services-grid.visible .service-card:nth-child(6) { animation-delay: 0.3s; }
+.services-grid.visible .service-card:nth-child(7) { animation-delay: 0.35s; }
+.services-grid.visible .service-card:nth-child(8) { animation-delay: 0.4s; }
+.project-gallery.visible img:nth-child(4) { animation-delay: 0.2s; }
+.project-gallery.visible img:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes staggerUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Parallax-style hero image zoom on scroll */
+.hero-bg img {
+  transition: transform 8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1.08);
+}
+
+.hero-bg.loaded img {
+  transform: scale(1);
+}
+
+/* Smooth gradient shimmer on CTA section */
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(245, 166, 35, 0.04) 40%,
+    rgba(245, 166, 35, 0.08) 50%,
+    rgba(245, 166, 35, 0.04) 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 6s ease-in-out infinite;
+  border-radius: var(--radius);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Accent underline animation on section titles */
+.section-title .highlight {
+  position: relative;
+}
+
+.section-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visible .section-title .highlight::after,
+.section-title.visible .highlight::after {
+  width: 100%;
+}
+
+/* Floating buttons entrance */
+.floating-btns {
+  animation: floatIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s both;
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.8); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Pulse on WhatsApp button */
+.floating-btn-whatsapp {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+  50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.35); }
+}
+
+/* Trust logos smooth infinite scroll feel */
+.trust-logos img {
+  transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trust-logos img:hover {
+  transform: scale(1.1);
+}
 
 /* ===== HOVER ENHANCEMENTS ===== */
 .home-service-card.small:hover img {
-  transform: scale(1.05);
-  transition: transform 0.5s ease;
+  transform: scale(1.08);
 }
 
 .home-service-card.small img {
-  transition: transform 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .review-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
 .review-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.1);
 }
 
-.contact-item {
-  transition: transform 0.3s ease, border-color 0.3s ease;
+.contact-item,
+.contact-info-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-item:hover {
-  transform: translateX(4px);
-  border-color: rgba(255,154,0,0.3);
+.contact-item:hover,
+.contact-info-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(245, 166, 35, 0.3);
+  box-shadow: 0 8px 24px rgba(245, 166, 35, 0.08);
 }
 
 .footer-contact-item {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
 }
 
 .footer-contact-item:hover {
@@ -1499,23 +1620,56 @@ button, input, textarea { font-family: inherit; }
 }
 
 .service-card {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
 }
 
 .service-card:hover .service-icon {
-  border-color: rgba(255,154,0,0.5);
+  border-color: rgba(245, 166, 35, 0.5);
+  box-shadow: 0 0 20px rgba(245, 166, 35, 0.15);
+}
+
+.service-icon {
+  transition: border-color 0.3s ease, box-shadow 0.4s ease;
 }
 
 .btn {
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 166, 35, 0.3);
 }
 
 .nav-links a {
   transition: all 0.3s ease;
+}
+
+/* Project gallery image hover */
+.project-gallery img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.project-gallery img:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* Diensten category buttons */
+.diensten-cat-btn,
+.diensten-sub-btn {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.diensten-cat-btn:hover,
+.diensten-sub-btn:hover {
+  transform: translateY(-2px);
 }
 
 /* ===== RESPONSIVE ===== */

@@ -198,7 +198,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .animate-in').forEach(el => {
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .animate-in, .services-grid, .reviews-grid, .project-gallery').forEach(el => {
     revealObserver.observe(el);
+  });
+
+  // Hero image slow zoom-out on load
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.hero-bg').forEach(bg => {
+      bg.classList.add('loaded');
+    });
+  });
+
+  // Smooth parallax on hero scroll
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+          const scrolled = window.scrollY;
+          const heroH = hero.offsetHeight;
+          if (scrolled < heroH) {
+            const bg = hero.querySelector('.hero-bg img');
+            if (bg) {
+              bg.style.transform = `scale(${1 + scrolled * 0.0002}) translateY(${scrolled * 0.3}px)`;
+            }
+          }
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Magnetic hover effect on buttons
+  document.querySelectorAll('.btn-primary, .floating-btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
   });
 });
