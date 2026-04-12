@@ -18,16 +18,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Tab switching (diensten page)
-  const tabBtns = document.querySelectorAll('.tab-btn');
+  // Main tab switching (diensten page)
+  const mainTabBtns = document.querySelectorAll('.tab-btn[data-tab]');
   const tabContents = document.querySelectorAll('.tab-content');
 
-  tabBtns.forEach(btn => {
+  mainTabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.dataset.tab;
 
-      tabBtns.forEach(b => b.classList.remove('active'));
+      mainTabBtns.forEach(b => b.classList.remove('active'));
       tabContents.forEach(c => c.classList.remove('active'));
+
+      btn.classList.add('active');
+      document.getElementById(target)?.classList.add('active');
+    });
+  });
+
+  // Sub-tab switching
+  const subTabBtns = document.querySelectorAll('.sub-tab-btn[data-subtab]');
+
+  subTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.subtab;
+      const parent = btn.closest('.tab-content');
+
+      parent.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
+      parent.querySelectorAll('.sub-tab-content').forEach(c => c.classList.remove('active'));
 
       btn.classList.add('active');
       document.getElementById(target)?.classList.add('active');

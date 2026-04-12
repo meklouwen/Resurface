@@ -310,6 +310,34 @@ button, input, textarea { font-family: inherit; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== SUB-TABS ===== */
+.sub-tabs {
+  margin-bottom: 40px;
+  gap: 6px;
+}
+
+.sub-tabs .sub-tab-btn {
+  font-size: 0.85rem;
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.sub-tabs .sub-tab-btn.active {
+  background: rgba(245, 166, 35, 0.15);
+  color: var(--accent);
+  border-color: rgba(245, 166, 35, 0.3);
+}
+
+.sub-tab-content {
+  display: none;
+}
+
+.sub-tab-content.active {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
 /* ===== CATEGORY INTRO ===== */
 .category-intro {
   display: grid;
@@ -348,7 +376,7 @@ button, input, textarea { font-family: inherit; }
 /* ===== SERVICES GRID ===== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
 
@@ -473,6 +501,29 @@ button, input, textarea { font-family: inherit; }
   transform: scale(1.05);
 }
 
+/* ===== WIP BANNER ===== */
+.wip-banner {
+  position: absolute;
+  top: 20px;
+  right: -35px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #f5a623,
+    #f5a623 10px,
+    #1a1a1a 10px,
+    #1a1a1a 20px
+  );
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 50px;
+  transform: rotate(35deg);
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
 /* ===== CTA SECTION ===== */
 .cta-section {
   background: var(--bg-card);
@@ -518,7 +569,7 @@ button, input, textarea { font-family: inherit; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-  align-items: start;
+  align-items: center;
 }
 
 .contact-label {
@@ -641,6 +692,100 @@ button, input, textarea { font-family: inherit; }
 
 .form-submit {
   margin-top: 8px;
+}
+
+/* ===== OFFERTE FORM ===== */
+.offerte-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.offerte-section-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin: 24px 0 12px;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.checkbox-item:hover {
+  border-color: rgba(245, 166, 35, 0.3);
+  background: rgba(245, 166, 35, 0.05);
+}
+
+.checkbox-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+
+.checkbox-item input[type="checkbox"]:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.checkbox-item input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--bg-dark);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.checkbox-item:has(input:checked) {
+  border-color: rgba(245, 166, 35, 0.4);
+  background: rgba(245, 166, 35, 0.08);
+}
+
+.checkbox-item:has(input:checked) .checkbox-label {
+  color: var(--text-white);
+}
+
+@media (max-width: 768px) {
+  .offerte-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== FOOTER ===== */
@@ -929,11 +1074,6 @@ button, input, textarea { font-family: inherit; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
@@ -976,14 +1116,27 @@ button, input, textarea { font-family: inherit; }
 
   .hero-content {
     padding: 0 24px;
+    text-align: center;
+    max-width: 100%;
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-label {
+    display: block;
+    text-align: center;
   }
 
   .hero-buttons {
     flex-direction: column;
+    align-items: center;
   }
 
   .hero-buttons .btn {
@@ -1074,6 +1227,67 @@ button, input, textarea { font-family: inherit; }
   }
 }
 
+/* ===== STICKY CONTACT BAR ===== */
+.sticky-contact {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  gap: 0;
+  background: var(--bg-dark);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.sticky-contact a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.sticky-contact .sticky-call {
+  background: var(--accent);
+  color: var(--bg-dark);
+}
+
+.sticky-contact .sticky-call:hover {
+  background: var(--accent-hover);
+}
+
+.sticky-contact .sticky-whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+
+.sticky-contact .sticky-whatsapp:hover {
+  background: #1da851;
+}
+
+.sticky-contact svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 769px) {
+  .sticky-contact {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 52px;
+  }
+}
+
 @media (max-width: 480px) {
   .nav {
     width: calc(100% - 24px);
@@ -1085,7 +1299,7 @@ button, input, textarea { font-family: inherit; }
   }
 
   .hero h1 {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 
   .services-grid {
