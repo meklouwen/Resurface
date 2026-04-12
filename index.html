@@ -4,25 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resurface — Totaalpartner in Interieur & Sign</title>
-  <meta name="description" content="Van krachtige branding tot inspirerende interieurs. Wij verzorgen het van ontwerp tot realisatie. Professionele sign & wrap oplossingen in Apeldoorn.">
+  <meta name="description" content="Van krachtige branding tot inspirerende interieurs. Wij verzorgen het van ontwerp tot realisatie. Professionele sign & interieur oplossingen in Apeldoorn.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="nav">
-    <a href="index.html" class="nav-logo">
+    <a href="/" class="nav-logo">
       <img src="images/logo.png" alt="Resurface" style="height: 32px;">
     </a>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="diensten.html">Diensten</a>
-      <a href="projecten.html">Projecten</a>
-      <a href="contact.html">Contact</a>
-      <a href="offerte.html" class="nav-cta">Offerte aanvragen</a>
+      <a href="/" class="active">Home</a>
+      <a href="/diensten">Diensten</a>
+      <a href="/projecten">Projecten</a>
+      <a href="/contact">Contact</a>
+      <a href="/offerte" class="nav-cta">Offerte aanvragen</a>
     </div>
     <button class="nav-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -37,10 +37,10 @@
     <div class="hero-content">
       <span class="hero-label">Van krachtige branding tot inspirerende interieurs</span>
       <h1>Wij verzorgen het van <span class="highlight">ontwerp</span> tot <span class="highlight">realisatie.</span></h1>
-      <p>Professionele sign & wrap oplossingen voor bedrijven en particulieren. Van interieurvernieuwing tot merkversterking.</p>
+      <p>Professionele sign & interieur oplossingen voor bedrijven en particulieren. Van interieurvernieuwing tot merkversterking.</p>
       <div class="hero-buttons">
-        <a href="offerte.html" class="btn btn-primary">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="diensten.html" class="btn btn-outline">Bekijk diensten</a>
+        <a href="/offerte" class="btn btn-primary">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/diensten" class="btn btn-outline">Bekijk diensten</a>
       </div>
     </div>
   </section>
@@ -48,43 +48,94 @@
   <!-- Waar kunnen wij u mee helpen? -->
   <section class="section">
     <div class="container">
-      <p class="section-label">Waar kunnen wij u mee helpen?</p>
-      <div class="tabs" style="margin-bottom: 48px;">
-        <a href="diensten.html#interieur" class="btn btn-primary">Vernieuw uw interieur</a>
-        <a href="diensten.html#merk" class="btn btn-outline">Versterk uw merk</a>
+      <p class="section-label reveal">Waar kunnen wij u mee helpen?</p>
+      <div class="tabs reveal" style="margin-bottom: 48px;">
+        <button class="tab-btn active" data-home-tab="interieur">Vernieuw uw interieur</button>
+        <button class="tab-btn" data-home-tab="merk">Versterk uw merk</button>
       </div>
 
       <div class="home-services">
-        <div class="home-service-card">
-          <img src="images/service-wrapping.jpg" alt="Interieur wrappen">
+        <!-- Interieur services -->
+        <div class="home-service-card small" data-home-panel="interieur">
+          <img src="images/interieur-wrappen.jpg" alt="Interieur wrappen">
           <div class="home-service-content">
             <h3>Interieur wrappen</h3>
-            <p>Folie voor meubels en wanden van huis, gevelbestickering enz.</p>
+            <p>Folie voor meubels en wanden voor een frisse, gepersonaliseerde look.</p>
+            <a href="/diensten" class="service-link">Bekijk de service <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
-        <div class="home-service-card">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-            <img src="images/service-wallpaper.jpg" alt="Naadloos fotobehang" style="aspect-ratio: 1; object-fit: cover;">
-            <img src="images/service-stickers.jpg" alt="Raambestickering" style="aspect-ratio: 1; object-fit: cover;">
-          </div>
+        <div class="home-service-card small" data-home-panel="interieur">
+          <img src="images/naadloos-fotobehang.jpg" alt="Naadloos fotobehang">
           <div class="home-service-content">
-            <h3>Vernieuw uw interieur</h3>
-            <p>Geef uw verblijfs- of werkruimte een nieuwe sfeer met interieur wrappen, naadloos fotobehang, bestickering en wandpanelen.</p>
-            <a href="diensten.html" class="btn btn-primary" style="margin-top: 16px; padding: 10px 20px; font-size: 0.85rem;">Lees meer</a>
+            <h3>Naadloos fotobehang</h3>
+            <p>Naadloze prints voor een verbluffend muurdecor zonder zichtbare naden</p>
+            <a href="/diensten" class="service-link">Bekijk de service <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
-        <div class="home-service-card">
-          <img src="images/service-interior.jpg" alt="Wandpanelen">
+        <div class="home-service-card small" data-home-panel="interieur">
+          <img src="images/bestickering-kantoor.jpg" alt="Bestickering">
+          <div class="home-service-content">
+            <h3>Bestickering</h3>
+            <p>Professionele bestickering voor kantoor en interieur</p>
+            <a href="/diensten" class="service-link">Bekijk de service <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+        <div class="home-service-card small" data-home-panel="interieur">
+          <img src="images/wandpanelen-2.jpg" alt="Wandpanelen">
           <div class="home-service-content">
             <h3>Wandpanelen</h3>
-            <p>Gegoten polymeren wandpanelen voor een moderne en stijlvolle afwerking van uw interieur.</p>
+            <p>Gegoten polymeren wandpanelen voor een moderne afwerking</p>
+            <a href="/diensten" class="service-link">Bekijk de service <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
-        <div class="home-service-card">
-          <img src="images/service-stickers.jpg" alt="Raambestickering">
+
+        <!-- Merk services (hidden by default) -->
+        <div class="home-service-card small" data-home-panel="merk" style="display:none;">
+          <img src="images/bestickering-kantoor.jpg" alt="Bestickering">
           <div class="home-service-content">
-            <h3>Raambestickering</h3>
-            <p>Decoratieve raamfolie en raambestickering: glas voorzien van een privacy en of sfeerfolie.</p>
+            <h3>Bestickering</h3>
+            <p>Professionele bestickering voor voertuigen, gevels en displays</p>
+            <a href="/diensten" class="service-link">Bekijk de service <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+        <div class="home-service-card small" data-home-panel="merk" style="display:none;">
+          <img src="images/lichtreclame.jpg" alt="Lichtreclame">
+          <div class="home-service-content">
+            <h3>Lichtreclame</h3>
+            <p>Opvallende verlichte signage die uw merk 24/7 zichtbaar maakt</p>
+            <a href="/diensten" class="service-link">Bekijk de service <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+        <div class="home-service-card small" data-home-panel="merk" style="display:none;">
+          <img src="images/bewegwijzering.jpg" alt="Bewegwijzering">
+          <div class="home-service-content">
+            <h3>Bewegwijzering</h3>
+            <p>Duidelijke en professionele bewegwijzering voor elk type locatie</p>
+            <a href="/diensten" class="service-link">Bekijk de service <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+        <div class="home-service-card small" data-home-panel="merk" style="display:none;">
+          <img src="images/naadloos-fotobehang.jpg" alt="Naadloos fotobehang">
+          <div class="home-service-content">
+            <h3>Naadloos fotobehang</h3>
+            <p>Grootformaat prints voor indrukwekkende merkpresentaties</p>
+            <a href="/diensten" class="service-link">Bekijk de service <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Right side info panel -->
+        <div class="home-service-card large" data-home-text="interieur">
+          <div class="home-service-content">
+            <h3>Vernieuw uw interieur</h3>
+            <p>Geef uw verblijfs- of werkruimte een frisse, eigentijdse uitstraling met oplossingen die naadloos aansluiten op uw interieurconcept. Of u nu een complete metamorfose ambieert of subtiele accenten wilt aanbrengen: onze materialen en vakmanschap zorgen voor een duurzaam en esthetisch resultaat.</p>
+            <a href="/contact" class="btn btn-primary" style="margin-top: 24px;">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+        <div class="home-service-card large" data-home-text="merk" style="display:none;">
+          <div class="home-service-content">
+            <h3>Versterk uw merk</h3>
+            <p>Maak uw merk zichtbaar met professionele signing en branding oplossingen. Van opvallende lichtreclame tot subtiele bestickering: wij zorgen ervoor dat uw bedrijf de aandacht krijgt die het verdient.</p>
+            <a href="/contact" class="btn btn-primary" style="margin-top: 24px;">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -92,15 +143,15 @@
   </section>
 
   <!-- Bedrijven die ons vertrouwen -->
-  <section style="padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+  <section style="padding: 40px 0; border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06);">
     <div class="container">
-      <p class="section-label" style="margin-bottom: 32px;">Bedrijven die ons al vertrouwen</p>
-      <div class="trust-logos">
-        <img src="images/logo-dks.png" alt="DKS Logistic Service">
-        <img src="images/logo-bollinos.png" alt="Bollino's">
-        <img src="images/logo-kwantum.png" alt="Kwantum">
-        <img src="images/logo-iciparisxl.png" alt="ICI Paris XL">
-        <img src="images/logo-cityside.png" alt="Cityside Apartments">
+      <p class="section-label reveal" style="margin-bottom: 32px;">Bedrijven die ons al vertrouwen</p>
+      <div class="trust-logos reveal">
+        <img src="images/logo-dks.png" alt="DKS Logistic Service" style="height: 30px;">
+        <img src="images/logo-bollinos.png" alt="Bollino's" style="height: 50px;">
+        <img src="images/logo-kwantum.png" alt="Kwantum" style="height: 50px;">
+        <img src="images/logo-iciparisxl.png" alt="ICI Paris XL" style="height: 20px;">
+        <img src="images/logo-cityside.png" alt="Cityside Apartments" style="height: 40px;">
       </div>
     </div>
   </section>
@@ -108,56 +159,62 @@
   <!-- Opgeleverde projecten -->
   <section class="section">
     <div class="container">
-      <p class="section-label">Ons werk</p>
-      <h2 class="section-title">Opgeleverde <span class="highlight">projecten</span></h2>
-      <div class="projects-showcase">
-        <div class="showcase-card">
-          <img src="images/service-wrapping.jpg" alt="Project kantoor">
-          <div class="showcase-overlay">
-            <h3>Kantoorinterieur</h3>
+      <div class="projects-bento">
+        <div class="projects-bento-text reveal-left">
+          <h2>Opgeleverde<br>projecten</h2>
+          <p>Wij zijn trots op wat we voor onze klanten bereiken. Dit stelt ons in staat om een goed voorbeeld te geven van de diensten die wij aanbieden.</p>
+          <a href="/projecten" class="btn btn-primary">Opgeleverde projecten <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="projects-bento-grid reveal-right">
+          <div class="projects-bento-img">
+            <img src="images/interieur-wrappen.jpg" alt="Kantoorinterieur">
+          </div>
+          <div class="projects-bento-img">
+            <img src="images/cinewall.webp" alt="Cinewall project">
+          </div>
+          <div class="projects-bento-img">
+            <img src="images/naadloos-fotobehang.jpg" alt="Fotobehang project">
+          </div>
+          <div class="projects-bento-img">
+            <img src="images/bestickering-kantoor.jpg" alt="Bestickering project">
           </div>
         </div>
-        <div class="showcase-card">
-          <img src="images/hero-interior.jpg" alt="Project interieur">
-          <div class="showcase-overlay">
-            <h3>Woning transformatie</h3>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img src="images/service-stickers.jpg" alt="Project bestickering">
-          <div class="showcase-overlay">
-            <h3>Raambestickering</h3>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img src="images/product-wood-wrap.jpg" alt="Project wrapping">
-          <div class="showcase-overlay">
-            <h3>Interieur wrapping</h3>
-          </div>
-        </div>
-      </div>
-      <div style="text-align: center;">
-        <a href="projecten.html" class="btn btn-primary">Bekijk onze projecten <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <div class="container">
-    <div class="cta-section">
-      <h2>Vraag uw op maat gemaakte <span class="highlight">offerte</span> aan</h2>
-      <p>Bent u toe aan een frisse uitstraling of kunnen wij u helpen met het versterken van uw merk? Vraag geheel gratis een offerte aan en ontdek de mogelijkheden.</p>
-      <a href="contact.html" class="btn btn-primary">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-
-  <!-- Reviews -->
-  <section class="section">
+  <!-- Google Reviews -->
+  <section class="section" style="background: #fff;">
     <div class="container">
-      <p class="section-label">Wat onze klanten vinden</p>
-      <h2 class="section-title" style="margin-bottom: 48px;">Beoordelingen</h2>
+      <div class="google-reviews-header reveal">
+        <div>
+          <p class="section-label" style="text-align: left;">Wat onze klanten vinden</p>
+          <h2 class="section-title" style="text-align: left; margin-bottom: 8px;">Google Reviews</h2>
+        </div>
+        <div class="google-reviews-score">
+          <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" style="height: 24px; margin-bottom: 8px;">
+          <div class="google-rating">
+            <span class="google-rating-number">4.8</span>
+            <div class="review-stars">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="google-rating-count">12 reviews</span>
+          </div>
+        </div>
+      </div>
       <div class="reviews-grid">
-        <div class="review-card">
+        <div class="review-card reveal stagger-1">
+          <div class="review-card-header">
+            <div class="review-avatar">LW</div>
+            <div>
+              <p class="review-author">Liam Westerveld</p>
+              <p class="review-date">17 april 2022</p>
+            </div>
+          </div>
           <div class="review-stars">
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -165,11 +222,16 @@
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <p class="review-date">4.17.2022</p>
           <p class="review-text">"Goed en mooi communicatie, de super netjes werk geleverd."</p>
-          <p class="review-author">Liam Westerveld</p>
         </div>
-        <div class="review-card">
+        <div class="review-card reveal stagger-2">
+          <div class="review-card-header">
+            <div class="review-avatar">JV</div>
+            <div>
+              <p class="review-author">Jacco VIS</p>
+              <p class="review-date">6 december 2024</p>
+            </div>
+          </div>
           <div class="review-stars">
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -177,11 +239,16 @@
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <p class="review-date">12.06.2024</p>
-          <p class="review-text">"Snelle prijs, vreemdelijk, mooi resultaat, nette service."</p>
-          <p class="review-author">Jacco VIS</p>
+          <p class="review-text">"Snelle prijs, vriendelijk, mooi resultaat, nette service."</p>
         </div>
-        <div class="review-card">
+        <div class="review-card reveal stagger-3">
+          <div class="review-card-header">
+            <div class="review-avatar">M</div>
+            <div>
+              <p class="review-author">Melissa</p>
+              <p class="review-date">10 december 2024</p>
+            </div>
+          </div>
           <div class="review-stars">
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -189,23 +256,22 @@
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <p class="review-date">12.10.2024</p>
-          <p class="review-text">"Resurface levert geweldige kwaliteit! Fijner, sneller, netjes en nu is de voorkeur al na de soort op merk bijhalen."</p>
-          <p class="review-author">Melissa</p>
+          <p class="review-text">"Resurface levert geweldige kwaliteit! Fijne, snelle en nette service."</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact bottom -->
-  <section style="padding: 0 0 40px; position: relative;">
+  <section class="home-contact-wrapper">
     <div class="container">
       <div class="home-contact">
-        <div class="home-contact-text">
-          <h2>Neem de stap en<br>door <span class="highlight">Schedule a call</span><br>with our team.</h2>
+        <div class="home-contact-text reveal-left">
+          <h2>Klaar voor een<br><span class="highlight">nieuwe look?</span></h2>
+          <p style="color: var(--text-gray); font-size: 1.05rem; margin-top: 16px;">Neem vandaag nog contact op.</p>
         </div>
         <div>
-          <form class="contact-form">
+          <form class="contact-form reveal-right">
             <div class="form-group">
               <input type="text" name="naam" placeholder="Naam" required>
             </div>
@@ -233,15 +299,15 @@
           <div class="footer-logo">
             <img src="images/logo.png" alt="Resurface">
           </div>
-          <p class="footer-desc">Full service voor al uw interieur behoeften.<br>Professionele interieur & sign oplossingen voor bedrijven en particulieren.</p>
+          <p class="footer-desc">Full service voor al uw signing behoeften.<br>Professionele sign & interieur oplossingen voor bedrijven en particulieren.</p>
         </div>
         <div>
           <h4>Navigatie</h4>
           <div class="footer-nav">
-            <a href="index.html">Home</a>
-            <a href="diensten.html">Diensten</a>
-            <a href="projecten.html">Projecten</a>
-            <a href="contact.html">Contact</a>
+            <a href="/">Home</a>
+            <a href="/diensten">Diensten</a>
+            <a href="/projecten">Projecten</a>
+            <a href="/contact">Contact</a>
           </div>
         </div>
         <div>
@@ -256,15 +322,15 @@
                 <p class="footer-contact-value">055 - 234 0900</p>
               </div>
             </div>
-            <div class="footer-contact-item">
+            <a href="https://wa.me/31552340900" target="_blank" class="footer-contact-item" style="text-decoration:none;color:inherit;">
               <div class="footer-contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               </div>
               <div>
-                <p class="footer-contact-label">Mobiel</p>
-                <p class="footer-contact-value">+31 6 1184 5442</p>
+                <p class="footer-contact-label">WhatsApp</p>
+                <p class="footer-contact-value">Stuur een bericht</p>
               </div>
-            </div>
+            </a>
             <div class="footer-contact-item">
               <div class="footer-contact-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
@@ -297,18 +363,16 @@
     </div>
   </footer>
 
-  <!-- Sticky Contact Bar -->
-  <div class="sticky-contact">
-    <a href="tel:0552340900" class="sticky-call">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      Bellen
+
+  <!-- Floating contact buttons -->
+  <div class="floating-btns">
+    <a href="https://wa.me/31552340900" target="_blank" class="floating-btn floating-btn-whatsapp" aria-label="WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
-    <a href="https://wa.me/31552340900" target="_blank" class="sticky-whatsapp">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
+    <a href="tel:0552340900" class="floating-btn floating-btn-call" aria-label="Bel ons">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
     </a>
   </div>
-
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>

@@ -8,21 +8,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="nav">
-    <a href="index.html" class="nav-logo">
+    <a href="/" class="nav-logo">
       <img src="images/logo.png" alt="Resurface" style="height: 32px;">
     </a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="diensten.html" class="active">Diensten</a>
-      <a href="projecten.html">Projecten</a>
-      <a href="contact.html">Contact</a>
-      <a href="offerte.html" class="nav-cta">Offerte aanvragen</a>
+      <a href="/">Home</a>
+      <a href="/diensten" class="active">Diensten</a>
+      <a href="/projecten">Projecten</a>
+      <a href="/contact">Contact</a>
+      <a href="/offerte" class="nav-cta">Offerte aanvragen</a>
     </div>
     <button class="nav-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -30,7 +30,7 @@
   </nav>
 
   <!-- Hero -->
-  <section class="hero" style="min-height: 70vh;">
+  <section class="hero hero-short">
     <div class="hero-bg">
       <img src="images/hero-interior.jpg" alt="Modern kantoor interieur">
     </div>
@@ -39,310 +39,247 @@
       <h1>Van uw <span class="highlight">interieur</span> of <span class="highlight">merk</span></h1>
       <p>Ontdek onze professionele diensten voor interieur transformatie en merkversterking.</p>
       <div class="hero-buttons">
-        <a href="offerte.html" class="btn btn-primary">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/offerte" class="btn btn-primary">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </section>
 
-  <!-- Tabs -->
+  <!-- Service Selector -->
+  <section class="diensten-selector">
+    <div class="container">
+      <h2 class="diensten-selector-title reveal">Kies uw gewenste service</h2>
+
+      <div class="diensten-categories reveal">
+        <button class="diensten-cat-btn active" data-main-cat="merk">Versterk uw merk</button>
+        <div class="diensten-sub-row" data-main-sub="merk">
+          <button class="diensten-sub-btn active" data-sub-cat="merk-exterieur">Exterieur</button>
+          <button class="diensten-sub-btn" data-sub-cat="merk-interieur">Interieur</button>
+        </div>
+        <button class="diensten-cat-btn" data-main-cat="interieur">Vernieuw uw interieur</button>
+        <div class="diensten-sub-row" data-main-sub="interieur" style="display:none;">
+          <button class="diensten-sub-btn active" data-sub-cat="interieur-bedrijfspand">Bedrijfspand</button>
+          <button class="diensten-sub-btn" data-sub-cat="interieur-woning">Woning</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Content -->
   <section class="section">
     <div class="container">
-      <p class="section-label">Waar bent u naar op zoek?</p>
-      <div class="tabs">
-        <button class="tab-btn active" data-tab="interieur">Vernieuw uw interieur</button>
-        <button class="tab-btn" data-tab="merk">Versterk uw merk</button>
-      </div>
 
-      <!-- TAB: Vernieuw uw interieur -->
-      <div id="interieur" class="tab-content active">
-
-        <!-- Sub-tabs: Bedrijfspand / Woning -->
-        <div class="tabs sub-tabs">
-          <button class="tab-btn sub-tab-btn active" data-subtab="bedrijfspand">Bedrijfspand</button>
-          <button class="tab-btn sub-tab-btn" data-subtab="woning">Woning</button>
-        </div>
-
-        <!-- SUB: Bedrijfspand -->
-        <div id="bedrijfspand" class="sub-tab-content active">
-          <div class="category-intro">
-            <div>
-              <h2>Bedrijfspand</h2>
-              <p>Creëer een professionele en inspirerende werkomgeving. Van interieur wrappen tot naadloos fotobehang — wij zorgen voor een bedrijfspand dat indruk maakt.</p>
-              <a href="offerte.html" class="btn btn-dark">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="category-image">
-              <img src="images/service-wrapping.jpg" alt="Bedrijfspand interieur">
-            </div>
+      <!-- Versterk uw merk > Interieur -->
+      <div class="diensten-panel" id="panel-merk-interieur">
+        <div class="category-intro reveal">
+          <div>
+            <h2>Versterk uw merk — Interieur</h2>
+            <p>Maak uw kantoor of bedrijfsruimte herkenbaar met professionele interieur signing. Van bestickering tot freesletters — wij zorgen voor een krachtige merkbeleving.</p>
+            <a href="/offerte" class="btn btn-primary">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
-
-          <p class="section-label">Wat kunnen wij doen</p>
-          <h2 class="section-title">Onze <span class="highlight">diensten</span></h2>
-
-          <div class="services-grid">
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-wrapping.jpg" alt="Interieur Wrappen">
-              </div>
-              <h3>Interieur Wrappen</h3>
-              <p>Geef kantoormeubels en wanden een nieuwe look met interieur wrappen</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-stickers.jpg" alt="Bestickering">
-              </div>
-              <h3>Bestickering</h3>
-              <p>Full-colour of gesneden bestickering voor uw bedrijfsruimte</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-stickers.jpg" alt="Raambestickering">
-              </div>
-              <h3>Raambestickering</h3>
-              <p>Privacy- en sfeerfolie voor ramen van uw bedrijfspand</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-wallpaper.jpg" alt="Naadloos Fotobehang">
-              </div>
-              <h3>Naadloos Fotobehang</h3>
-              <p>Indrukwekkende muur met naadloos fotobehang tot 70 meter</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-interior.jpg" alt="Roomdividers">
-              </div>
-              <h3>Roomdividers</h3>
-              <p>Verdeel uw ruimte efficiënt met stijlvolle roomdividers</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-interior.jpg" alt="Muurkunst">
-              </div>
-              <h3>Muurkunst</h3>
-              <p>Prachtige muurkunst op plexiglas, canvas of dibond</p>
-            </div>
+          <div class="category-image">
+            <img src="images/bestickering-kantoor.jpg" alt="Interieur signing">
           </div>
         </div>
-
-        <!-- SUB: Woning -->
-        <div id="woning" class="sub-tab-content">
-          <div class="category-intro">
-            <div>
-              <h2>Woning</h2>
-              <p>Geef uw woning een persoonlijke touch met onze interieuroplossingen. Van meubels wrappen tot naadloos fotobehang en wandpanelen — wij transformeren uw leefruimte.</p>
-              <a href="offerte.html" class="btn btn-dark">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="category-image">
-              <img src="images/hero-interior.jpg" alt="Woning interieur">
-            </div>
+        <p class="section-label">Wat kunnen wij doen</p>
+        <h2 class="section-title">Onze <span class="highlight">diensten</span></h2>
+        <div class="services-grid reveal">
+          <div class="service-card">
+            <div class="service-icon"><img src="images/bestickering-kantoor.jpg" alt="Bestickering"></div>
+            <h3>Bestickering</h3>
+            <p>Full-colour of gesneden bestickering voor je kantoorruimte</p>
           </div>
-
-          <p class="section-label">Wat kunnen wij doen</p>
-          <h2 class="section-title">Onze <span class="highlight">diensten</span></h2>
-
-          <div class="services-grid">
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-wrapping.jpg" alt="Interieur Wrappen">
-              </div>
-              <h3>Interieur Wrappen</h3>
-              <p>Geef uw interieur een nieuwe uitstraling door meubels te wrappen</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-stickers.jpg" alt="Raambestickering">
-              </div>
-              <h3>Raambestickering</h3>
-              <p>Decoratieve raamfolie voor privacy en sfeer in uw woning</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-wallpaper.jpg" alt="Naadloos Fotobehang">
-              </div>
-              <h3>Naadloos Fotobehang</h3>
-              <p>Indrukwekkende muur met naadloos fotobehang tot 70 meter</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-interior.jpg" alt="Cinewalls">
-              </div>
-              <h3>Cinewalls</h3>
-              <p>Op maat gemaakte cinewalls in verschillende afwerkingen</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-interior.jpg" alt="Wandpanelen">
-              </div>
-              <h3>Wandpanelen</h3>
-              <p>Gegoten polymeren wandpanelen voor een moderne afwerking</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-interior.jpg" alt="Roomdividers">
-              </div>
-              <h3>Roomdividers</h3>
-              <p>Verdeel uw ruimte efficiënt met stijlvolle roomdividers</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-interior.jpg" alt="Muurkunst">
-              </div>
-              <h3>Muurkunst</h3>
-              <p>Prachtige muurkunst op plexiglas, canvas of dibond</p>
-            </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/freesletters.jpg" alt="Freesletters"></div>
+            <h3>Freesletters</h3>
+            <p>Freesletters in verschillende materialen voor je kantoor</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/lichtreclame-2.jpg" alt="LED Letters"></div>
+            <h3>Lichtreclame</h3>
+            <p>Verhoog de zichtbaarheid met lichtreclame in diverse afwerkingen</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/naadloos-fotobehang-2.jpg" alt="Naadloos Fotobehang"></div>
+            <h3>Naadloos Fotobehang</h3>
+            <p>Verfraai je kantoor met naadloos fotobehang voor een unieke sfeer</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/gevel-bestickering.jpg" alt="Gevelbestickering"></div>
+            <h3>Gevelbestickering</h3>
+            <p>Trek de aandacht met professionele gevelbestickering</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/muurkunst.jpg" alt="Muurkunst"></div>
+            <h3>Muurkunst</h3>
+            <p>Verfraai je kantoor met muurkunst op plexiglas, canvas of dibond</p>
           </div>
         </div>
       </div>
 
-      <!-- TAB: Versterk uw merk -->
-      <div id="merk" class="tab-content">
-
-        <!-- Sub-tabs: Exterieur / Interieur -->
-        <div class="tabs sub-tabs">
-          <button class="tab-btn sub-tab-btn active" data-subtab="exterieur">Exterieur</button>
-          <button class="tab-btn sub-tab-btn" data-subtab="merk-interieur">Interieur</button>
-        </div>
-
-        <!-- SUB: Exterieur -->
-        <div id="exterieur" class="sub-tab-content active">
-          <div class="category-intro">
-            <div>
-              <h2>Exterieur</h2>
-              <p>Maak uw merk zichtbaar met professionele signing en reclameoplossingen. Van lichtreclame tot carwrapping en spandoeken — wij brengen uw boodschap over.</p>
-              <a href="offerte.html" class="btn btn-dark">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="category-image">
-              <img src="images/service-stickers.jpg" alt="Exterieur signing">
-            </div>
+      <!-- Versterk uw merk > Exterieur -->
+      <div class="diensten-panel active" id="panel-merk-exterieur">
+        <div class="category-intro reveal">
+          <div>
+            <h2>Versterk uw merk — Exterieur</h2>
+            <p>Maak uw merk zichtbaar met professionele buitenreclame. Van lichtreclame tot carwrapping en spandoeken — wij brengen uw boodschap over.</p>
+            <a href="/offerte" class="btn btn-primary">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
-
-          <p class="section-label">Wat kunnen wij doen</p>
-          <h2 class="section-title">Onze <span class="highlight">diensten</span></h2>
-
-          <div class="services-grid">
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-stickers.jpg" alt="Gevelbestickering">
-              </div>
-              <h3>Gevelbestickering</h3>
-              <p>Trek de aandacht met professionele gevelbestickering</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-stickers.jpg" alt="Autobestickering">
-              </div>
-              <h3>Autobestickering</h3>
-              <p>Reclame op voertuigen met belettering of full wraps</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-wrapping.jpg" alt="Carwrapping">
-              </div>
-              <h3>Carwrapping</h3>
-              <p>Geef uw bedrijfswagen een professionele uitstraling</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-interior.jpg" alt="Lichtreclame">
-              </div>
-              <h3>Lichtreclame</h3>
-              <p>Laat uw bedrijf opvallen met lichtreclame in alle formaten</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-wrapping.jpg" alt="Bewegwijzering">
-              </div>
-              <h3>Bewegwijzering</h3>
-              <p>Duidelijke bewegwijzering voor binnen en buiten</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-wrapping.jpg" alt="Freesletters">
-              </div>
-              <h3>Freesletters</h3>
-              <p>Freesletters in meerdere materialen voor een krachtige uitstraling</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-wrapping.jpg" alt="Borden">
-              </div>
-              <h3>Borden</h3>
-              <p>Opvallende borden in verschillende stijlen voor uw bedrijf</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-wrapping.jpg" alt="Spandoeken">
-              </div>
-              <h3>Spandoeken</h3>
-              <p>Spandoeken voor promotie op evenementen of buitenlocaties</p>
-            </div>
+          <div class="category-image">
+            <img src="images/lichtreclame.jpg" alt="Exterieur signing">
           </div>
         </div>
-
-        <!-- SUB: Interieur (merk) -->
-        <div id="merk-interieur" class="sub-tab-content">
-          <div class="category-intro">
-            <div>
-              <h2>Interieur</h2>
-              <p>Versterk uw merkidentiteit binnen uw bedrijfsruimte. Van bestickering tot lichtreclame — wij zorgen voor een herkenbare en professionele uitstraling.</p>
-              <a href="offerte.html" class="btn btn-dark">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            </div>
-            <div class="category-image">
-              <img src="images/service-interior.jpg" alt="Interieur signing">
-            </div>
+        <p class="section-label">Wat kunnen wij doen</p>
+        <h2 class="section-title">Onze <span class="highlight">diensten</span></h2>
+        <div class="services-grid reveal">
+          <div class="service-card">
+            <div class="service-icon"><img src="images/lichtreclame.jpg" alt="Lichtreclame"></div>
+            <h3>Lichtreclame</h3>
+            <p>Laat je bedrijf opvallen met lichtreclame in alle formaten</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/bewegwijzering.jpg" alt="Bewegwijzering"></div>
+            <h3>Bewegwijzering</h3>
+            <p>Duidelijke bewegwijzering voor binnen en buiten</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/carwrapping.jpg" alt="Carwrapping"></div>
+            <h3>Carwrapping</h3>
+            <p>Geef je bedrijfswagen een professionele uitstraling</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/carwrapping-bestickering.jpg" alt="Bestickering"></div>
+            <h3>Autobestickering</h3>
+            <p>Reclame op voertuigen met belettering of full wraps</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/freesletters-2.jpg" alt="Freesletters"></div>
+            <h3>Freesletters</h3>
+            <p>Freesletters in meerdere materialen voor een krachtige uitstraling</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/borden.jpg" alt="Borden"></div>
+            <h3>Borden</h3>
+            <p>Opvallende borden in verschillende stijlen voor je bedrijf</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/spandoeken.jpg" alt="Spandoeken"></div>
+            <h3>Spandoeken</h3>
+            <p>Spandoeken voor promotie op evenementen of buitenlocaties</p>
           </div>
 
-          <p class="section-label">Wat kunnen wij doen</p>
-          <h2 class="section-title">Onze <span class="highlight">diensten</span></h2>
+        </div>
+      </div>
 
-          <div class="services-grid">
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-stickers.jpg" alt="Bestickering">
-              </div>
-              <h3>Bestickering</h3>
-              <p>Full-colour of gesneden bestickering voor uw bedrijfsruimte</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-wallpaper.jpg" alt="Naadloos Behang">
-              </div>
-              <h3>Naadloos Behang</h3>
-              <p>Indrukwekkend naadloos behang voor een unieke sfeer</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-interior.jpg" alt="Lichtreclame">
-              </div>
-              <h3>Lichtreclame</h3>
-              <p>LED lichtreclame en verlichte teksten voor binnen</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-wrapping.jpg" alt="Freesletters">
-              </div>
-              <h3>Freesletters</h3>
-              <p>Freesletters in verschillende materialen voor uw kantoor</p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon">
-                <img src="images/service-interior.jpg" alt="Muurkunst">
-              </div>
-              <h3>Muurkunst</h3>
-              <p>Verfraai uw bedrijfsruimte met muurkunst op plexiglas, canvas of dibond</p>
-            </div>
+      <!-- Vernieuw uw interieur > Woning -->
+      <div class="diensten-panel" id="panel-interieur-woning">
+        <div class="category-intro reveal">
+          <div>
+            <h2>Vernieuw uw interieur — Woning</h2>
+            <p>Geef uw woning een persoonlijke touch met onze interieuroplossingen. Van meubels wrappen tot naadloos fotobehang en cinewalls — wij transformeren uw leefruimte.</p>
+            <a href="/offerte" class="btn btn-primary">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="category-image">
+            <img src="images/cinewall.webp" alt="Woning interieur">
+          </div>
+        </div>
+        <p class="section-label">Wat kunnen wij doen</p>
+        <h2 class="section-title">Onze <span class="highlight">diensten</span></h2>
+        <div class="services-grid reveal">
+          <div class="service-card">
+            <div class="service-icon"><img src="images/interieur-wrappen-2.jpg" alt="Interieur Wrappen"></div>
+            <h3>Interieur Wrappen</h3>
+            <p>Geef je interieur een nieuwe uitstraling door meubels te wrappen</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/raambestickering.jpg" alt="Raambestickering"></div>
+            <h3>Raambestickering</h3>
+            <p>Bescherm je privacy met decoratieve raambestickering</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/naadloos-fotobehang.jpg" alt="Naadloos Fotobehang"></div>
+            <h3>Naadloos Fotobehang</h3>
+            <p>Indrukwekkende muur met naadloos fotobehang tot 70 meter</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/cinewall.webp" alt="Cinewalls"></div>
+            <h3>Cinewalls</h3>
+            <p>Op maat gemaakte cinewalls in verschillende afwerkingen</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/wandpanelen-2.jpg" alt="Wandpanelen"></div>
+            <h3>Wandpanelen</h3>
+            <p>Gegoten polymeren wandpanelen voor een moderne afwerking</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/muurkunst.jpg" alt="Muurkunst"></div>
+            <h3>Muurkunst</h3>
+            <p>Prachtige muurkunst op plexiglas, canvas of dibond</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/roomdividers.jpg" alt="Roomdividers"></div>
+            <h3>Roomdividers</h3>
+            <p>Verdeel je ruimte effici&euml;nt met stijlvolle roomdividers</p>
           </div>
         </div>
       </div>
+
+      <!-- Vernieuw uw interieur > Bedrijfspand -->
+      <div class="diensten-panel" id="panel-interieur-bedrijfspand">
+        <div class="category-intro reveal">
+          <div>
+            <h2>Vernieuw uw interieur — Bedrijfspand</h2>
+            <p>Cre&euml;er een professionele en inspirerende werkomgeving. Van interieur wrappen tot bestickering en LED letters — wij zorgen voor een kantoor dat indruk maakt.</p>
+            <a href="/offerte" class="btn btn-primary">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="category-image">
+            <img src="images/bestickering-kantoor.jpg" alt="Bedrijfspand interieur">
+          </div>
+        </div>
+        <p class="section-label">Wat kunnen wij doen</p>
+        <h2 class="section-title">Onze <span class="highlight">diensten</span></h2>
+        <div class="services-grid reveal">
+          <div class="service-card">
+            <div class="service-icon"><img src="images/interieur-wrappen.jpg" alt="Interieur Wrappen"></div>
+            <h3>Interieur Wrappen</h3>
+            <p>Geef kantoormeubels een nieuwe look met interieur wrappen</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/bestickering-kantoor.jpg" alt="Bestickering"></div>
+            <h3>Bestickering</h3>
+            <p>Full-colour of gesneden bestickering voor je kantoorruimte</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/raambestickering.jpg" alt="Raambestickering"></div>
+            <h3>Raambestickering</h3>
+            <p>Decoratieve en functionele stickers voor ramen en glazen oppervlakken</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/naadloos-fotobehang-2.jpg" alt="Naadloos Fotobehang"></div>
+            <h3>Naadloos Fotobehang</h3>
+            <p>Verfraai je kantoor met naadloos fotobehang voor een unieke sfeer</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/roomdividers.jpg" alt="Roomdividers"></div>
+            <h3>Roomdividers</h3>
+            <p>Verdeel je ruimte efficiënt met stijlvolle roomdividers</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><img src="images/muurkunst.jpg" alt="Muurkunst"></div>
+            <h3>Muurkunst</h3>
+            <p>Verfraai je kantoor met muurkunst op plexiglas, canvas of dibond</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- CTA -->
   <div class="container">
-    <div class="cta-section">
+    <div class="cta-section reveal-scale">
       <h2>Vraag uw op maat gemaakte <span class="highlight">offerte</span> aan</h2>
       <p>Wij helpen u graag met uw sign & wrap project. Neem contact op voor een vrijblijvend adviesgesprek en ontdek de mogelijkheden.</p>
-      <a href="contact.html" class="btn btn-primary">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="/offerte" class="btn btn-primary">Offerte aanvragen <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 
@@ -354,15 +291,15 @@
           <div class="footer-logo">
             <img src="images/logo.png" alt="Resurface">
           </div>
-          <p class="footer-desc">Full service voor al uw interieur behoeften.<br>Professionele interieur & sign oplossingen voor bedrijven en particulieren.</p>
+          <p class="footer-desc">Full service voor al uw signing behoeften.<br>Professionele sign & interieur oplossingen voor bedrijven en particulieren.</p>
         </div>
         <div>
           <h4>Navigatie</h4>
           <div class="footer-nav">
-            <a href="index.html">Home</a>
-            <a href="diensten.html">Diensten</a>
-            <a href="projecten.html">Projecten</a>
-            <a href="contact.html">Contact</a>
+            <a href="/">Home</a>
+            <a href="/diensten">Diensten</a>
+            <a href="/projecten">Projecten</a>
+            <a href="/contact">Contact</a>
           </div>
         </div>
         <div>
@@ -377,15 +314,15 @@
                 <p class="footer-contact-value">055 - 234 0900</p>
               </div>
             </div>
-            <div class="footer-contact-item">
+            <a href="https://wa.me/31552340900" target="_blank" class="footer-contact-item" style="text-decoration:none;color:inherit;">
               <div class="footer-contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               </div>
               <div>
-                <p class="footer-contact-label">Mobiel</p>
-                <p class="footer-contact-value">+31 6 1184 5442</p>
+                <p class="footer-contact-label">WhatsApp</p>
+                <p class="footer-contact-value">Stuur een bericht</p>
               </div>
-            </div>
+            </a>
             <div class="footer-contact-item">
               <div class="footer-contact-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
@@ -418,18 +355,22 @@
     </div>
   </footer>
 
-  <!-- Sticky Contact Bar -->
-  <div class="sticky-contact">
-    <a href="tel:0552340900" class="sticky-call">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      Bellen
-    </a>
-    <a href="https://wa.me/31552340900" target="_blank" class="sticky-whatsapp">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
-    </a>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="">
+    <p class="lightbox-caption"></p>
   </div>
 
-  <script src="js/main.js"></script>
+  <!-- Floating contact buttons -->
+  <div class="floating-btns">
+    <a href="https://wa.me/31552340900" target="_blank" class="floating-btn floating-btn-whatsapp" aria-label="WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a href="tel:0552340900" class="floating-btn floating-btn-call" aria-label="Bel ons">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </a>
+  </div>
+  <script src="js/main.js?v=6"></script>
 </body>
 </html>
