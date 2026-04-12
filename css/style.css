@@ -41,6 +41,20 @@ button, input, textarea { font-family: inherit; }
   padding: 0 24px;
 }
 
+/* ===== SCROLL PROGRESS BAR ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), #ff6b35);
+  width: 0%;
+  z-index: 10000;
+  transition: none;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 10px rgba(245, 166, 35, 0.5);
+}
+
 /* ===== NAVIGATION ===== */
 .nav {
   position: fixed;
@@ -1572,13 +1586,152 @@ button, input, textarea { font-family: inherit; }
   50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.35); }
 }
 
-/* Trust logos smooth infinite scroll feel */
-.trust-logos img {
+/* Trust logos infinite marquee */
+.trust-logos-track {
+  display: flex;
+  animation: marquee 25s linear infinite;
+  width: max-content;
+}
+
+.trust-logos-track img {
+  flex-shrink: 0;
+  margin: 0 36px;
   transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.trust-logos img:hover {
-  transform: scale(1.1);
+.trust-logos-track img:hover {
+  transform: scale(1.15);
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.trust-logos {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+/* 3D tilt on cards */
+.tilt-card {
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+/* Smooth form focus underline */
+.form-group {
+  position: relative;
+}
+
+.form-group::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 2px;
+}
+
+.form-group:focus-within::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Counter animation for rating number */
+.google-rating-number {
+  display: inline-block;
+}
+
+/* Nav links hover sliding underline */
+.nav-links a:not(.nav-cta) {
+  position: relative;
+}
+
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-links a:not(.nav-cta):hover::after,
+.nav-links a:not(.nav-cta).active::after {
+  width: 60%;
+  left: 20%;
+}
+
+/* Smooth page transitions */
+.page-transition {
+  animation: pageIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Projects bento hover 3D */
+.projects-bento-img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+.projects-bento-img:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Glow cursor effect on hero */
+.hero-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 166, 35, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.hero:hover .hero-glow {
+  opacity: 1;
+}
+
+/* Smooth image reveal clip */
+.clip-reveal {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clip-reveal.visible {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Tab switch animation */
+.diensten-panel {
+  animation: none;
+}
+
+.diensten-panel.active {
+  animation: panelIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 /* ===== HOVER ENHANCEMENTS ===== */
