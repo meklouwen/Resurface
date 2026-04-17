@@ -1032,6 +1032,22 @@ button, input, textarea { font-family: inherit; }
   color: var(--text-white);
 }
 
+.built-by {
+  color: var(--text-gray);
+  font-size: 0.8rem;
+}
+
+.built-by a {
+  color: var(--text-gray);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: var(--transition);
+}
+
+.built-by a:hover {
+  color: var(--text-white);
+}
+
 /* ===== HOME: DIENSTEN BENTO ===== */
 .home-services {
   display: grid;
